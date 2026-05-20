@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pakota 開發者頁面 - 皮克敏蘑菇計時器">
+<title>Pakota Developer</title>
+<style>
+  :root {
+    --bg:     #0D1B2A;
+    --bg2:    #16213E;
+    --bg3:    #1A2744;
+    --accent: #2ECC71;
+    --danger: #E74C3C;
+    --blue:   #0F3460;
+    --text:   #FFFFFF;
+    --text2:  #CCCCCC;
+    --text3:  #888888;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  /* ── Header ── */
+  .header {
+    width: 100%; background: var(--bg2);
+    border-bottom: 1px solid rgba(46,204,113,0.2);
+    padding: 24px 20px; text-align: center;
+  }
+  .header-icon { font-size: 48px; margin-bottom: 10px; }
+  .header-title { font-size: 24px; font-weight: 700; letter-spacing: 1px; }
+  .header-sub { font-size: 13px; color: var(--text3); margin-top: 6px; }
+
+  /* ── Main ── */
+  .main {
+    width: 100%; max-width: 480px;
+    padding: 24px 16px 48px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--bg2);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .card-label {
+    font-size: 11px; color: var(--text3);
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  /* ── Link button ── */
+  .link-btn {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--bg3); border-radius: 12px;
+    padding: 14px 16px; text-decoration: none;
+    color: var(--text); transition: opacity 0.15s;
+    margin-bottom: 10px;
+  }
+  .link-btn:last-child { margin-bottom: 0; }
+  .link-btn:hover { opacity: 0.85; }
+  .link-btn:active { opacity: 0.7; }
+  .link-icon { font-size: 26px; flex-shrink: 0; }
+  .link-info { flex: 1; }
+  .link-title { font-size: 15px; font-weight: 700; }
+  .link-sub { font-size: 12px; color: var(--text3); margin-top: 3px; }
+  .link-arrow { color: var(--text3); font-size: 18px; }
+
+  /* ── 特色按鈕 ── */
+  .link-btn.green { border: 1px solid rgba(46,204,113,0.3); }
+  .link-btn.green .link-title { color: var(--accent); }
+  .link-btn.red   { border: 1px solid rgba(231,76,60,0.3); }
+  .link-btn.red   .link-title { color: #FF6B6B; }
+  .link-btn.blue  { border: 1px solid rgba(15,52,96,0.8); }
+
+  /* ── Footer ── */
+  .footer {
+    width: 100%; text-align: center;
+    padding: 20px; font-size: 12px; color: var(--text3);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-icon">🍄</div>
+  <div class="header-title">Pakota Developer</div>
+  <div class="header-sub">皮克敏蘑菇計時器 開發者頁面</div>
+</div>
+
+<div class="main">
+
+  <!-- 應用程式 -->
+  <div class="card">
+    <div class="card-label">應用程式</div>
+
+    <a class="link-btn green"
+       href="https://play.google.com/store/apps/details?id=pakota.pikmintimer"
+       target="_blank" rel="noopener">
+      <div class="link-icon">📱</div>
+      <div class="link-info">
+        <div class="link-title">皮克敏蘑菇計時器</div>
+        <div class="link-sub">Android 版 — Google Play 商店</div>
+      </div>
+      <div class="link-arrow">›</div>
+    </a>
+
+    <a class="link-btn blue"
+       href="https://zxc78985246.github.io/pikmintimer"
+       target="_blank" rel="noopener">
+      <div class="link-icon">🌐</div>
+      <div class="link-info">
+        <div class="link-title">網頁版（測試中）</div>
+        <div class="link-sub">iOS / 瀏覽器版本</div>
+      </div>
+      <div class="link-arrow">›</div>
+    </a>
+
+  </div>
+
+  <!-- 教學與支援 -->
+  <div class="card">
+    <div class="card-label">教學與支援</div>
+
+    <a class="link-btn"
+       href="https://youtu.be/R_0jgQDb7hY"
+       target="_blank" rel="noopener">
+      <div class="link-icon">▶️</div>
+      <div class="link-info">
+        <div class="link-title">YouTube 教學影片</div>
+        <div class="link-sub">完整使用說明</div>
+      </div>
+      <div class="link-arrow">›</div>
+    </a>
+
+    <a class="link-btn red"
+       href="https://portaly.cc/Pakota/support"
+       target="_blank" rel="noopener">
+      <div class="link-icon">❤️</div>
+      <div class="link-info">
+        <div class="link-title">支持開發者</div>
+        <div class="link-sub">贊助 / 看廣告支持</div>
+      </div>
+      <div class="link-arrow">›</div>
+    </a>
+
+  </div>
+
+  <!-- 關於 -->
+  <div class="card">
+    <div class="card-label">關於</div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.8">
+      <p>皮克敏蘑菇計時器是專為 <strong>Pikmin Bloom</strong> 玩家設計的蘑菇重生計時工具。</p>
+      <br>
+      <p>・記錄蘑菇剩餘時間，自動加 5 分鐘重生冷卻</p>
+      <p>・重生前 30 秒提醒通知</p>
+      <p>・懸浮視窗，不影響遊戲操作</p>
+      <p>・支援多個蘑菇同時計時</p>
+      <br>
+      <p style="color:var(--text3);font-size:12px">© 2025 Pakota. All rights reserved.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  zxc78985246.github.io
+</div>
+
+</body>
+</html>
