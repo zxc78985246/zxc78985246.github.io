@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FAF7F0">
+<title>紐西蘭南島：春季櫻花魔戒巡禮</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#3E4A45;
+  --ink-2:#48564F;
+  --pine:#5C8770;
+  --pine-deep:#436653;
+  --pine-light:#7BA48C;
+  --teal:#6FA6A0;
+  --teal-deep:#4F8078;
+  --sakura:#EFC9D2;
+  --sakura-deep:#C98BA0;
+  --gold:#C2A05F;
+  --gold-deep:#93783E;
+  --cream:#FAF7F0;
+  --paper:#FFFFFF;
+  --text:#4A4740;
+  --text-soft:#8B8579;
+  --line:#EAE4D6;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; background:#FAF7F0; color-scheme:light;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:"Noto Sans TC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:"Noto Serif TC","Cormorant Garamond",serif;}
+.eyebrow{
+  font-family:"Cormorant Garamond",serif;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:var(--gold);
+}
+a{color:var(--teal-deep);}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  background:linear-gradient(180deg,#D9E8E6 0%,#E4EDE0 30%,#F0ECDC 62%,#FAF7F0 100%);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:var(--ink);
+}
+.hero .stars{
+  position:absolute; inset:0 0 55% 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1.5px 1.5px at 28% 8%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1px 1px at 44% 22%, rgba(255,255,255,.8), transparent),
+    radial-gradient(1.5px 1.5px at 62% 10%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1px 1px at 76% 26%, rgba(255,255,255,.8), transparent),
+    radial-gradient(1.5px 1.5px at 88% 14%, rgba(255,255,255,.9), transparent),
+    radial-gradient(1px 1px at 8% 34%, rgba(255,255,255,.8), transparent),
+    radial-gradient(1px 1px at 95% 32%, rgba(255,255,255,.8), transparent);
+  opacity:.5;
+}
+.ridge{position:absolute; left:0; right:0; width:100%; display:block;}
+.ridge.back{bottom:14%; opacity:.55;}
+.ridge.mid{bottom:6%; opacity:.75;}
+.ridge.front{bottom:-2%;}
+.petals{position:absolute; inset:0; pointer-events:none; overflow:hidden;}
+.petal{
+  position:absolute; top:-5%;
+  width:10px; height:10px;
+  background:var(--sakura);
+  border-radius:0 60% 0 60%;
+  opacity:.75;
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  0%{ transform:translate(0,0) rotate(0deg); }
+  100%{ transform:translate(var(--drift,40px), 105vh) rotate(300deg); }
+}
+.hero-inner{
+  position:relative; z-index:2;
+  padding:8vh 6vw 6vh;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-block;
+  padding:.35em 1.1em;
+  border:1px solid rgba(74,71,64,.25);
+  border-radius:999px;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  margin-bottom:1.4rem;
+  color:var(--ink-2);
+}
+.hero h1{
+  font-size:clamp(2.4rem,7vw,4.6rem);
+  font-weight:900;
+  margin:.2rem 0;
+  letter-spacing:.06em;
+  color:var(--pine-deep);
+  text-shadow:0 2px 18px rgba(255,255,255,.4);
+}
+.hero .subtitle{
+  font-size:clamp(1rem,2.6vw,1.35rem);
+  font-weight:500;
+  letter-spacing:.12em;
+  color:var(--sakura-deep);
+  margin-bottom:1.8rem;
+}
+.hero .lede{
+  max-width:640px;
+  margin:0 auto 2.2rem;
+  line-height:1.9;
+  font-size:.98rem;
+  color:var(--text);
+}
+.hero-meta{
+  display:flex; flex-wrap:wrap; gap:.6rem 1rem;
+  justify-content:center;
+  font-family:"Cormorant Garamond",serif;
+}
+.hero-meta span{
+  padding:.5em 1.1em;
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(74,71,64,.15);
+  border-radius:999px;
+  font-size:1rem;
+  letter-spacing:.04em;
+  color:var(--ink);
+}
+.hero-meta b{color:var(--pine-deep); font-weight:600;}
+
+/* ---------- NAV ---------- */
+.tabbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,239,227,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  overflow-x:auto;
+  white-space:nowrap;
+  scrollbar-width:none;
+  padding:.55rem 4vw;
+}
+.tabbar::-webkit-scrollbar{display:none;}
+.tabbar a{
+  display:inline-block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:.92rem;
+  letter-spacing:.05em;
+  text-decoration:none;
+  color:var(--ink);
+  padding:.4rem .75rem;
+  border-radius:8px;
+  margin-right:.15rem;
+  border:1px solid transparent;
+}
+.tabbar a.ov{font-weight:700; color:var(--pine-deep); border-color:var(--pine-light);}
+.tabbar a:hover{background:rgba(111,166,160,.14);}
+.tabbar a.active{background:var(--pine-deep); color:#fff;}
+
+.daybar{
+  position:sticky; top:2.9rem; z-index:49;
+  background:rgba(244,239,227,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  overflow-x:auto; white-space:nowrap; scrollbar-width:none;
+  padding:.45rem 4vw;
+  display:none;
+}
+.daybar.show{display:block;}
+.daybar::-webkit-scrollbar{display:none;}
+.daybar a{
+  display:inline-block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:.82rem; letter-spacing:.03em;
+  text-decoration:none; color:var(--text-soft);
+  padding:.3rem .65rem; border-radius:999px;
+  margin-right:.3rem; border:1px solid var(--line);
+}
+.daybar a:hover{background:rgba(111,166,160,.14); color:var(--ink);}
+.daybar a.active{background:var(--teal-deep); color:#fff; border-color:var(--teal-deep);}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:920px; margin:0 auto; padding:0 5vw; background:var(--cream);}
+.view{display:none; padding:3rem 0 2rem; min-height:60vh; animation:viewIn .4s ease; background:var(--cream);}
+.view.active{display:block;}
+@keyframes viewIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+.section-head{margin-bottom:2rem; text-align:center;}
+.section-head h2{font-size:clamp(1.6rem,4vw,2.2rem); margin:.3rem 0 0;}
+
+/* overview cards */
+.stat-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1rem; margin:2rem 0;
+}
+.stat-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:14px;
+  padding:1.2rem 1rem; text-align:center;
+}
+.stat-card .n{font-family:"Cormorant Garamond",serif; font-size:1.9rem; color:var(--pine-deep); font-weight:600;}
+.stat-card .l{font-size:.78rem; color:var(--text-soft); letter-spacing:.05em; margin-top:.2rem;}
+
+.route-line{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:.35rem; margin:2.2rem 0; font-family:"Noto Serif TC",serif;
+}
+.route-line .stop{
+  background:var(--pine-deep); color:#fff; padding:.45em 1em; border-radius:999px;
+  font-size:.86rem; font-weight:700;
+}
+.route-line .arrow{color:var(--gold-deep); font-size:1rem;}
+
+.flight-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:16px;
+  padding:1.3rem 1.5rem; margin-bottom:1rem;
+}
+.flight-card .fdate{
+  font-size:.76rem; color:var(--gold-deep); letter-spacing:.1em; margin-bottom:.5rem;
+  text-transform:uppercase; font-weight:700;
+}
+.fseg{display:flex; align-items:center; gap:1rem; padding:.4rem 0;}
+.fseg + .fseg{border-top:1px dashed var(--line);}
+.fseg .pt{text-align:center; min-width:64px;}
+.fseg .pt .t{font-family:"Cormorant Garamond",serif; font-size:1.35rem; color:var(--ink); font-weight:600;}
+.fseg .pt .c{font-size:.72rem; color:var(--text-soft);}
+.fseg .mid{flex:1; text-align:center; font-size:.78rem; color:var(--text-soft);}
+.fseg .mid .fl{color:var(--teal-deep); font-weight:700; display:block; margin-bottom:.15rem;}
+.fseg .line{height:1px; background:var(--line); position:relative; margin:0 .3rem;}
+
+.ref-box{
+  text-align:center; font-family:"Cormorant Garamond",serif; font-size:1.05rem;
+  color:var(--text-soft); margin-top:1rem;
+}
+.ref-box b{color:var(--pine-deep); letter-spacing:.06em;}
+
+.budget-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:16px;
+  padding:.4rem 1.5rem; margin-bottom:1rem;
+}
+.budget-row{
+  display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  padding:.75rem 0; border-bottom:1px dashed var(--line);
+  font-size:.92rem;
+}
+.budget-row:last-child{border-bottom:none;}
+.budget-row .item{color:var(--text); line-height:1.5;}
+.budget-row .amt{
+  font-family:"Cormorant Garamond",serif; font-weight:600; font-size:1.1rem;
+  color:var(--pine-deep); white-space:nowrap;
+}
+.budget-total{
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--pine-deep); color:#fff;
+  border-radius:14px; padding:1rem 1.5rem; margin-bottom:.6rem;
+}
+.budget-total .item{font-family:"Noto Serif TC",serif; font-weight:700; letter-spacing:.05em;}
+.budget-total .amt{font-family:"Cormorant Garamond",serif; font-size:1.5rem; font-weight:700; color:#fff;}
+.budget-note{text-align:center; font-size:.78rem; color:var(--text-soft); margin-bottom:.5rem;}
+
+/* spots page */
+.spot-region{margin-bottom:2.1rem;}
+.spot-region h4{
+  font-family:"Noto Serif TC",serif; font-size:1.05rem; color:var(--pine-deep);
+  margin:0 0 .4rem; padding-bottom:.4rem; border-bottom:1px solid var(--line);
+  display:flex; align-items:baseline; gap:.5rem;
+}
+.spot-region h4 .rday{font-family:"Cormorant Garamond",serif; font-size:.85rem; color:var(--text-soft); font-weight:500;}
+.spot-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:.6rem;
+}
+.spot-card{
+  display:flex; align-items:center; gap:.5rem;
+  background:rgba(92,135,112,.06); border:1px solid var(--line);
+  border-radius:12px; padding:.65rem .8rem;
+  text-decoration:none; color:var(--text);
+  font-size:.85rem; line-height:1.4;
+  transition:background .15s, border-color .15s, transform .15s;
+}
+.spot-card:hover{background:rgba(92,135,112,.14); border-color:var(--pine-light); transform:translateY(-1px);}
+.spot-card .pin{flex:0 0 auto; font-size:.95rem;}
+.spot-card .names{display:flex; flex-direction:column; gap:.1rem; min-width:0;}
+.spot-card .name{color:var(--ink); font-weight:500;}
+.spot-card .eng{
+  font-family:"Cormorant Garamond",serif; font-size:.76rem; font-style:italic;
+  color:var(--text-soft); white-space:normal; line-height:1.3;
+}
+
+/* packing checklist page */
+.pack-region{margin-bottom:1.9rem;}
+.pack-region h4{
+  font-family:"Noto Serif TC",serif; font-size:1.05rem; color:var(--teal-deep);
+  margin:0 0 .6rem; padding-bottom:.4rem; border-bottom:1px solid var(--line);
+  display:flex; align-items:baseline; gap:.5rem;
+}
+.pack-region h4 .icon{font-size:1.1rem;}
+.pack-list{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:.5rem .8rem; list-style:none; margin:0; padding:0;
+}
+.pack-list li{
+  display:flex; align-items:flex-start; gap:.55rem;
+  background:rgba(111,166,160,.07); border:1px solid var(--line);
+  border-radius:10px; padding:.55rem .75rem;
+  font-size:.85rem; line-height:1.5; color:var(--text);
+}
+.pack-list li .box{
+  flex:0 0 auto; width:16px; height:16px; margin-top:.2rem;
+  accent-color:var(--teal-deep); cursor:pointer;
+}
+.pack-list.wide{grid-template-columns:1fr;}
+.pack-note{
+  text-align:center; color:var(--text-soft); font-size:.82rem;
+  max-width:560px; margin:.6rem auto 2rem; line-height:1.8;
+}
+
+/* food map page (reuses spot-card look, gold accent) */
+.food-card{border-color:var(--line);}
+.food-card:hover{background:rgba(194,160,95,.14); border-color:var(--gold);}
+.food-card .rating{
+  font-family:"Cormorant Garamond",serif; font-size:.78rem; color:var(--gold-deep);
+  font-weight:600; white-space:nowrap;
+}
+
+/* day sections */
+.day-head{display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap; margin-bottom:.3rem;}
+.day-num{font-family:"Cormorant Garamond",serif; font-size:2.4rem; color:var(--pine-deep); font-weight:600; line-height:1;}
+.day-date{font-size:.85rem; color:var(--text-soft); letter-spacing:.08em; font-weight:700;}
+.day-base{
+  font-size:.72rem; color:var(--pine-deep); background:rgba(92,135,112,.14);
+  border:1px solid rgba(92,135,112,.3);
+  padding:.25em .8em; border-radius:999px; letter-spacing:.04em;
+}
+.day h3{font-size:1.5rem; margin:.4rem 0 1.3rem; color:var(--ink);}
+
+.itinerary{
+  list-style:none; margin:0 0 1.4rem; padding:0;
+  border-left:2px solid rgba(92,135,112,.25);
+}
+.itinerary li{
+  position:relative; padding:.2rem 0 .2rem 1.4rem; margin-left:-1px;
+  font-size:.96rem; line-height:1.65; color:var(--text);
+}
+.itinerary li::before{
+  content:""; position:absolute; left:-6px; top:.6rem;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--cream); border:2px solid var(--pine);
+}
+.itinerary li:first-child::before{background:var(--pine-deep); border-color:var(--pine-deep);}
+
+.meta-row{
+  display:flex; gap:1.2rem; flex-wrap:wrap;
+  font-size:.84rem; color:var(--text-soft); margin-bottom:1.3rem;
+}
+.meta-row b{color:var(--pine-deep);}
+
+.desc{
+  background:rgba(92,135,112,.06); border:none; border-radius:14px;
+  padding:1.1rem 1.3rem; line-height:1.95; font-size:.95rem; margin-bottom:1.1rem;
+  color:var(--text);
+}
+.desc .lbl{font-weight:700; color:var(--pine-deep); margin-right:.3em;}
+
+.chips{display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.3rem;}
+.chip{
+  background:rgba(92,135,112,.1); color:var(--pine-deep); border:1px solid rgba(92,135,112,.28);
+  padding:.35em .85em; border-radius:999px; font-size:.8rem;
+}
+.note{
+  border-left:3px solid var(--gold-deep);
+  background:rgba(194,160,95,.1);
+  padding:.8rem 1.1rem; font-size:.86rem; line-height:1.75; color:var(--text-soft);
+  border-radius:0 10px 10px 0;
+}
+.note .lbl{color:var(--gold-deep); font-weight:700;}
+
+.packing{
+  border-left:3px solid var(--teal-deep);
+  background:rgba(111,166,160,.1);
+  padding:.8rem 1.1rem; font-size:.86rem; line-height:1.75; color:var(--text-soft);
+  border-radius:0 10px 10px 0; margin-top:.8rem;
+}
+.packing .lbl{color:var(--teal-deep); font-weight:700;}
+
+.day-flight{
+  margin-top:1.2rem; font-size:.85rem; color:var(--text-soft);
+  background:rgba(92,135,112,.06); border:none; border-radius:12px; padding:.8rem 1.1rem;
+}
+.day-flight b{color:var(--ink);}
+
+.day-stay{
+  margin-top:1.2rem; font-size:.85rem; color:var(--text-soft);
+  background:rgba(92,135,112,.06); border:none; border-radius:12px; padding:.8rem 1.1rem;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem .8rem;
+}
+.day-stay .info{color:var(--text-soft);}
+.day-stay .info b{color:var(--ink); font-weight:700;}
+.day-stay .addr{display:block; font-size:.78rem; color:var(--text-soft); margin-top:.15rem;}
+.day-stay a.maplink{
+  flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:.35em;
+  font-size:.8rem; font-weight:700; color:#fff; text-decoration:none;
+  background:var(--pine-deep); padding:.45em 1em; border-radius:999px;
+  white-space:nowrap;
+}
+.day-stay a.maplink:hover{background:var(--pine); }
+
+/* prev/next day nav */
+.day-progress{
+  text-align:center; font-family:"Cormorant Garamond",serif; letter-spacing:.1em;
+  color:var(--text-soft); font-size:.85rem; margin-bottom:.6rem;
+}
+.day-nav{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:2.4rem; padding-top:1.4rem; border-top:1px solid var(--line);
+  gap:.6rem;
+}
+.day-nav button{
+  font-family:"Noto Serif TC",serif; font-size:.88rem;
+  background:transparent; color:var(--pine-deep); border:1px solid rgba(92,135,112,.35);
+  border-radius:999px; padding:.55em 1.2em; cursor:pointer;
+  transition:background .15s, color .15s;
+}
+.day-nav button:hover:not(:disabled){background:var(--pine-deep); color:#fff; border-color:var(--pine-deep);}
+.day-nav button:disabled{opacity:.35; cursor:default;}
+.day-nav .hint{font-size:.72rem; color:var(--text-soft); text-align:center; flex:0 0 100%; order:3; margin-top:.5rem;}
+
+footer{
+  text-align:center; padding:3.5rem 5vw 4rem; color:var(--text-soft); font-size:.82rem;
+  border-top:1px solid var(--line);
+}
+footer .serif{font-size:1.1rem; color:var(--pine-deep); display:block; margin-bottom:.4rem;}
+
+@media(prefers-reduced-motion: reduce){
+  .petal{animation:none; display:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stars"></div>
+  <div class="petals" id="petals"></div>
+  <svg class="ridge back" viewBox="0 0 1200 300" preserveAspectRatio="none"><polygon points="0,300 0,180 150,110 320,170 480,80 620,150 780,60 950,140 1100,90 1200,160 1200,300" fill="#AFC7BE"/></svg>
+  <svg class="ridge mid" viewBox="0 0 1200 260" preserveAspectRatio="none"><polygon points="0,260 0,150 180,90 360,160 540,70 700,140 880,60 1040,130 1200,100 1200,260" fill="#8CAF9C"/></svg>
+  <svg class="ridge front" viewBox="0 0 1200 200" preserveAspectRatio="none"><polygon points="0,200 0,120 200,150 420,90 640,150 860,100 1040,150 1200,110 1200,200" fill="#5F8770"/></svg>
+  <div class="hero-inner">
+    <span class="hero-badge">SOUTH ISLAND · AOTEAROA</span>
+    <h1>紐西蘭南島</h1>
+    <div class="subtitle">春季櫻花魔戒巡禮</div>
+    <p class="lede">九月的紐西蘭正值初春，大地復甦，庫克山仍有積雪，且基督城與皇后鎮的櫻花正盛開，是非常浪漫的時節。從高雄、台北出發，沿著南島畫出一個完整的環圈——冰河湖泊、星空、峽灣與魔戒取景地，一站一站慢慢收藏。</p>
+    <div class="hero-meta">
+      <span>📅 <b>9/12 – 9/28</b></span>
+      <span>🌙 <b>16 天</b> 南島環線</span>
+      <span>✈️ <b>KHH ⇄ CHC</b></span>
+      <span>🎬 <b>魔戒 × 星空 × 峽灣</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar" id="tabbar">
+  <a href="#overview" data-view="overview" class="ov">總覽</a>
+  <a href="#d01" data-view="d01" data-group="days" class="ov">每日行程</a>
+  <a href="#spots" data-view="spots" class="ov">景點地圖</a>
+  <a href="#packing" data-view="packing" class="ov">行前準備</a>
+  <a href="#food" data-view="food" class="ov">美食地圖</a>
+  <a href="#shopping" data-view="shopping" class="ov">必買好物</a>
+  <a href="#notes" data-view="notes" class="ov">注意事項</a>
+</nav>
+
+<nav class="daybar" id="daybar">
+  <a href="#d01" data-view="d01">D01 9/12</a>
+  <a href="#d02" data-view="d02">D02 9/13</a>
+  <a href="#d03" data-view="d03">D03 9/14</a>
+  <a href="#d04" data-view="d04">D04 9/15</a>
+  <a href="#d05" data-view="d05">D05 9/16</a>
+  <a href="#d06" data-view="d06">D06 9/17</a>
+  <a href="#d07" data-view="d07">D07 9/18</a>
+  <a href="#d08" data-view="d08">D08 9/19</a>
+  <a href="#d09" data-view="d09">D09 9/20</a>
+  <a href="#d10" data-view="d10">D10 9/21</a>
+  <a href="#d11" data-view="d11">D11 9/22-23</a>
+  <a href="#d12" data-view="d12">D12 9/24</a>
+  <a href="#d13" data-view="d13">D13 9/25</a>
+  <a href="#d14" data-view="d14">D14 9/26</a>
+  <a href="#d15" data-view="d15">D15 9/27</a>
+</nav>
+
+<main>
+
+<section id="overview" class="view active">
+  <div class="section-head">
+    <span class="eyebrow">Trip Overview</span>
+    <h2>行程總覽</h2>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="n">16</div><div class="l">天數（含去回程）</div></div>
+    <div class="stat-card"><div class="n">9</div><div class="l">南島駐點</div></div>
+    <div class="stat-card"><div class="n">KHH / TPE</div><div class="l">出發地</div></div>
+    <div class="stat-card"><div class="n">CHC</div><div class="l">南島門戶：基督城</div></div>
+  </div>
+
+  <div class="route-line">
+    <span class="stop">基督城</span><span class="arrow">›</span>
+    <span class="stop">蒂卡波</span><span class="arrow">›</span>
+    <span class="stop">庫克山</span><span class="arrow">›</span>
+    <span class="stop">瓦納卡</span><span class="arrow">›</span>
+    <span class="stop">皇后鎮</span><span class="arrow">›</span>
+    <span class="stop">蒂阿瑙</span><span class="arrow">›</span>
+    <span class="stop">但尼丁</span><span class="arrow">›</span>
+    <span class="stop">奧瑪魯</span><span class="arrow">›</span>
+    <span class="stop">基督城</span>
+  </div>
+
+  <h3 class="serif" style="text-align:center;margin:2.4rem 0 1rem;color:var(--pine-deep);">✈️ 機票資訊</h3>
+
+  <div class="flight-card">
+    <div class="fdate">去程 · 9/12（六）－ 9/13（日）</div>
+    <div class="fseg">
+      <div class="pt"><div class="t">11:10</div><div class="c">KHH 高雄</div></div>
+      <div class="mid"><span class="fl">CX431</span>直飛</div>
+      <div class="pt"><div class="t">12:50</div><div class="c">HKG 香港</div></div>
+    </div>
+    <div class="fseg">
+      <div class="pt"><div class="t">21:10</div><div class="c">HKG 香港</div></div>
+      <div class="mid"><span class="fl">CX113</span>直飛</div>
+      <div class="pt"><div class="t">11:50<sup>+1</sup></div><div class="c">AKL 奧克蘭</div></div>
+    </div>
+    <div class="fseg">
+      <div class="pt"><div class="t">14:25</div><div class="c">AKL 奧克蘭</div></div>
+      <div class="mid"><span class="fl">JQ235</span>直飛</div>
+      <div class="pt"><div class="t">15:45</div><div class="c">CHC 基督城</div></div>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div class="fdate">回程 · 9/27（日）－ 9/28（一）</div>
+    <div class="fseg">
+      <div class="pt"><div class="t">09:40</div><div class="c">CHC 基督城</div></div>
+      <div class="mid"><span class="fl">JQ232</span>直飛</div>
+      <div class="pt"><div class="t">11:00</div><div class="c">AKL 奧克蘭</div></div>
+    </div>
+    <div class="fseg">
+      <div class="pt"><div class="t">14:25</div><div class="c">AKL 奧克蘭</div></div>
+      <div class="mid"><span class="fl">CX198</span>直飛</div>
+      <div class="pt"><div class="t">21:05</div><div class="c">HKG 香港</div></div>
+    </div>
+    <div class="fseg">
+      <div class="pt"><div class="t">08:35<sup>+1</sup></div><div class="c">HKG 香港</div></div>
+      <div class="mid"><span class="fl">CX432</span>直飛</div>
+      <div class="pt"><div class="t">10:10<sup>+1</sup></div><div class="c">KHH 高雄</div></div>
+    </div>
+  </div>
+
+  <h3 class="serif" style="text-align:center;margin:2.4rem 0 1rem;color:var(--pine-deep);">💰 費用清單（每人）</h3>
+  <div class="budget-note">紐西蘭南島賞櫻自然洗禮行・單位：新台幣</div>
+
+  <div class="budget-total">
+    <span class="item">總計 / 每人</span>
+    <span class="amt">NT$ 101,571</span>
+  </div>
+
+  <div class="budget-card">
+    <div class="budget-row"><span class="item">住宿費</span><span class="amt">$19,744</span></div>
+    <div class="budget-row"><span class="item">國際機票</span><span class="amt">$23,933</span></div>
+    <div class="budget-row"><span class="item">庫克山：3 小時塔斯曼冰川直升機之旅和徒步旅行</span><span class="amt">$14,853</span></div>
+    <div class="budget-row"><span class="item">Paddle Wanaka</span><span class="amt">$540</span></div>
+    <div class="budget-row"><span class="item">TSS 恩斯羅號蒸汽船＋午餐＋農場體驗</span><span class="amt">$3,025</span></div>
+    <div class="budget-row"><span class="item">3 小時 6 線滑索探險</span><span class="amt">$3,165</span></div>
+    <div class="budget-row"><span class="item">Gondola + 5 Luge Rides</span><span class="amt">$1,690</span></div>
+    <div class="budget-row"><span class="item">蒂阿瑙・螢火蟲洞</span><span class="amt">$2,373</span></div>
+    <div class="budget-row"><span class="item">米爾福德峽灣：野生動物與自然遊船之旅</span><span class="amt">$2,369</span></div>
+    <div class="budget-row"><span class="item">藍眼企鵝觀賞</span><span class="amt">$750</span></div>
+    <div class="budget-row"><span class="item">基督城電車一日券・雅芳河划船</span><span class="amt">$1,429</span></div>
+    <div class="budget-row"><span class="item">租車</span><span class="amt">$5,200</span></div>
+    <div class="budget-row"><span class="item">停車費</span><span class="amt">$500</span></div>
+    <div class="budget-row"><span class="item">加油費</span><span class="amt">$2,000</span></div>
+    <div class="budget-row"><span class="item">餐費</span><span class="amt">$20,000</span></div>
+  </div>
+</section>
+
+<section id="spots" class="view">
+  <div class="section-head">
+    <span class="eyebrow">All Spots</span>
+    <h2>景點地圖</h2>
+    <p style="color:var(--text-soft); font-size:.88rem; max-width:520px; margin:.6rem auto 0;">點擊卡片直接開啟 Google 地圖導航，依行程日期分區排列。</p>
+  </div>
+
+    <div class="spot-region">
+      <h4>D02 · Ashburton <span class="rday">9/13</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Ashburton%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">阿什伯頓</span><span class="eng">Ashburton</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D03 · 蒂卡波 Lake Tekapo <span class="rday">9/14</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Lake%20Tekapo%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">蒂卡波湖</span><span class="eng">Lake Tekapo</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Church%20of%20the%20Good%20Shepherd%2C%20Lake%20Tekapo" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">牧羊人教堂</span><span class="eng">Church of the Good Shepherd</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Mt%20John%20Summit%20Circuit%20Track%2C%20Lake%20Tekapo" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Mt. John 步道</span><span class="eng">Mt John Summit Circuit Track</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Astro%20Caf%C3%A9%20Mt%20John%20Tekapo" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Astro Café</span><span class="eng">Astro Café</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Tekapo%20Springs" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">蒂卡波溫泉</span><span class="eng">Tekapo Springs</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D04 · 庫克山 Aoraki/Mount Cook <span class="rday">9/15</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Aoraki%20Mount%20Cook%20National%20Park" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">庫克山國家公園</span><span class="eng">Aoraki / Mount Cook National Park</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Tasman%20Glacier%2C%20Mount%20Cook" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">塔斯曼冰川</span><span class="eng">Tasman Glacier</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pukaki%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">普卡基湖</span><span class="eng">Lake Pukaki</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Alpine%20Salmon%20Lake%20Pukaki" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Alpine Salmon 鮭魚專賣店</span><span class="eng">Alpine Salmon</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D05–D06 · 瓦納卡 Wanaka <span class="rday">9/16-17</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Lake%20Wanaka%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">瓦納卡湖</span><span class="eng">Lake Wanaka</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=That%20Wanaka%20Tree" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">瓦納卡孤獨樹</span><span class="eng">That Wanaka Tree</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Lindis%20Pass%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">林迪斯山口</span><span class="eng">Lindis Pass</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Roys%20Peak%20Track%2C%20Wanaka" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Roys Peak 步道</span><span class="eng">Roys Peak Track</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D07–D08 · 皇后鎮 Queenstown <span class="rday">9/18-19</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Queenstown%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">皇后鎮</span><span class="eng">Queenstown</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=TSS%20Earnslaw%20Steamship%20Queenstown" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">恩斯羅號蒸汽船</span><span class="eng">TSS Earnslaw Steamship</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Walter%20Peak%20High%20Country%20Farm" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">瓦爾特峰高原牧場</span><span class="eng">Walter Peak High Country Farm</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Queenstown%20Gardens" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">皇后鎮植物園</span><span class="eng">Queenstown Gardens</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Arrowtown%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">箭鎮</span><span class="eng">Arrowtown</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Fergburger%20Queenstown" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Fergburger 漢堡店</span><span class="eng">Fergburger</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Skyline%20Gondola%20Queenstown" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">天空纜車</span><span class="eng">Skyline Gondola</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Ziptrek%20Ecotours%20Queenstown" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Ziptrek 高空滑索</span><span class="eng">Ziptrek Ecotours</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Deer%20Park%20Heights%20Queenstown" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">鹿園</span><span class="eng">Deer Park Heights</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D09–D10 · 蒂阿瑙與米佛峽灣 <span class="rday">9/20-21</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Lake%20Te%20Anau%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">蒂阿瑙湖</span><span class="eng">Lake Te Anau</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Te%20Anau%20Glowworm%20Caves" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">蒂阿瑙螢火蟲洞</span><span class="eng">Te Anau Glowworm Caves</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Milford%20Sound%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">米佛峽灣</span><span class="eng">Milford Sound</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Mirror%20Lakes%2C%20Milford%20Road" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">鏡湖</span><span class="eng">Mirror Lakes</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Monkey%20Creek%2C%20Milford%20Road" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">猴子山（Monkey Creek）</span><span class="eng">Monkey Creek</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D11 · 但尼丁 Dunedin <span class="rday">9/22-23</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Baldwin%20Street%2C%20Dunedin" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">鮑德溫街</span><span class="eng">Baldwin Street</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Dunedin%20Railway%20Station" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">但尼丁火車站</span><span class="eng">Dunedin Railway Station</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=University%20of%20Otago" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">奧塔哥大學</span><span class="eng">University of Otago</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=St%20Paul%27s%20Cathedral%2C%20Dunedin" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">聖保羅大教堂</span><span class="eng">St Paul's Cathedral</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Otago%20Peninsula%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">奧塔哥半島</span><span class="eng">Otago Peninsula</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D12 · 奧瑪魯 Oamaru <span class="rday">9/24</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Moeraki%20Boulders%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">摩拉基大圓石</span><span class="eng">Moeraki Boulders</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Oamaru%20Blue%20Penguin%20Colony" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">藍企鵝保護區</span><span class="eng">Oamaru Blue Penguin Colony</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Oamaru%20Victorian%20Precinct" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">奧瑪魯維多利亞街區</span><span class="eng">Oamaru Victorian Precinct</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D13 · 城堡山 Castle Hill <span class="rday">9/25</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Castle%20Hill%2C%20Kura%20Tawhiti%2C%20New%20Zealand" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">城堡山</span><span class="eng">Castle Hill, Kura Tawhiti</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D14 · 基督城 Christchurch <span class="rday">9/26</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Avon%20River%20Punting%20Christchurch" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">雅芳河撐篙船</span><span class="eng">Avon River Punting</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Christchurch%20Botanic%20Gardens" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">基督城植物園</span><span class="eng">Christchurch Botanic Gardens</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Christchurch%20Tram" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">基督城路面電車</span><span class="eng">Christchurch Tram</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Cardboard%20Cathedral%20Christchurch" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">紙教堂</span><span class="eng">Cardboard Cathedral</span></span></a>
+      <a class="spot-card" href="https://www.google.com/maps/search/?api=1&query=Riverside%20Market%20Christchurch" target="_blank" rel="noopener"><span class="pin">📍</span><span class="names"><span class="name">Riverside Market 河濱市集</span><span class="eng">Riverside Market</span></span></a>
+      </div>
+    </div>
+</section>
+
+<section id="packing" class="view">
+  <div class="section-head">
+    <span class="eyebrow">Before You Go</span>
+    <h2>出發前應攜帶物品</h2>
+    <p style="color:var(--text-soft); font-size:.88rem; max-width:520px; margin:.6rem auto 0;">依類別整理，出發前逐項打勾確認。</p>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">📑</span> 證件與財務</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">護照（效期 6 個月以上）＋影本／電子檔備份</li>
+      <li><input type="checkbox" class="box">電子機票、住宿與租車訂單（紙本＋手機備份）</li>
+      <li><input type="checkbox" class="box">國際駕照＋台灣駕照正本（租車必備）</li>
+      <li><input type="checkbox" class="box">信用卡（含租車預刷額度用卡）與少量紐幣現金</li>
+      <li><input type="checkbox" class="box">旅遊平安險保單／英文投保證明</li>
+      <li><input type="checkbox" class="box">大頭照 1-2 張（備用）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🔌</span> 電子與通訊</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">手機、充電線、行動電源</li>
+      <li><input type="checkbox" class="box">紐西蘭上網 SIM 卡／eSIM（或漫遊方案）</li>
+      <li><input type="checkbox" class="box">紐澳規格電源轉接頭（Type I）</li>
+      <li><input type="checkbox" class="box">相機、備用電池與記憶卡</li>
+      <li><input type="checkbox" class="box">車用手機架（自駕導航用）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🧥</span> 衣物（九月南島早晚溫差大）</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">防風防水外套（洋蔥式穿搭最外層）</li>
+      <li><input type="checkbox" class="box">保暖刷毛／羽絨中層衣物</li>
+      <li><input type="checkbox" class="box">排汗長袖上衣、長褲數件</li>
+      <li><input type="checkbox" class="box">毛帽、手套、圍巾（山區與夜間必備）</li>
+      <li><input type="checkbox" class="box">防水健行鞋＋厚襪子</li>
+      <li><input type="checkbox" class="box">室內拖鞋／涼鞋（水上活動與住宿用）</li>
+      <li><input type="checkbox" class="box">泳衣＋大毛巾（Tekapo Springs 溫泉）</li>
+      <li><input type="checkbox" class="box">太陽眼鏡（雪地與湖面反光強烈）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🎒</span> 健行與戶外活動裝備</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">登山杖（Roys Peak 等長時健行用）</li>
+      <li><input type="checkbox" class="box">輕便背包（含防水套或防水袋）</li>
+      <li><input type="checkbox" class="box">水壺／保溫瓶</li>
+      <li><input type="checkbox" class="box">行動糧、能量棒</li>
+      <li><input type="checkbox" class="box">防曬乳（南半球紫外線偏強）</li>
+      <li><input type="checkbox" class="box">暈船藥（米佛峽灣遊船）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">💊</span> 盥洗與醫藥包</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">個人常備藥品（感冒藥、腸胃藥、止痛藥）</li>
+      <li><input type="checkbox" class="box">暈車暈船藥、高山症用藥（視個人體質）</li>
+      <li><input type="checkbox" class="box">OK 繃、簡易外傷藥膏</li>
+      <li><input type="checkbox" class="box">牙刷牙膏、旅行盥洗組</li>
+      <li><input type="checkbox" class="box">護唇膏、乳液（紐西蘭氣候乾燥）</li>
+      <li><input type="checkbox" class="box">個人慣用藥物處方（如有）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🧳</span> 其他實用小物</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">環保購物袋（超市採買、伴手禮打包）</li>
+      <li><input type="checkbox" class="box">保溫水壺（可裝熱飲禦寒）</li>
+      <li><input type="checkbox" class="box">折疊傘或輕便雨衣</li>
+      <li><input type="checkbox" class="box">行李秤（回程伴手禮避免超重）</li>
+      <li><input type="checkbox" class="box">預留空行李空間／摺疊袋（戰利品用）</li>
+      <li><input type="checkbox" class="box">耳塞、眼罩（長途飛行與同住房用）</li>
+    </ul>
+  </div>
+
+  <p class="pack-note">💡 提醒：紐西蘭邊境對食品、植物、戶外用品（含健行鞋、帳篷等）檢疫嚴格，入境卡務必誠實申報並清潔鞋底泥土，以免受罰。</p>
+</section>
+
+<section id="food" class="view">
+  <div class="section-head">
+    <span class="eyebrow">Food Map</span>
+    <h2>美食地圖</h2>
+    <p style="color:var(--text-soft); font-size:.88rem; max-width:520px; margin:.6rem auto 0;">依行程日期分區，精選各地評價較高的餐廳，點擊卡片直接開啟 Google 地圖導航。實際評分請以 Google 地圖當下顯示為準。</p>
+  </div>
+
+    <div class="spot-region">
+      <h4>D02 · 基督城 Christchurch <span class="rday">9/13</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Inati%20Restaurant%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Inati</span><span class="eng">紐西蘭當代料理・Google 高分餐廳</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=OGB%20Restaurant%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">OGB</span><span class="eng">歐式小酒館・在地人氣首選</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=C1%20Espresso%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">C1 Espresso</span><span class="eng">創意漢堡與咖啡・氣送薯條聞名</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Little%20High%20Eatery%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Little High Eatery</span><span class="eng">美食廣場・多國料理任選</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D03 · 蒂卡波 Lake Tekapo <span class="rday">9/14</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Kohan%20Japanese%20Restaurant%20Lake%20Tekapo" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Kohan 日本料理</span><span class="eng">湖畔景觀・鮭魚丼評價極高</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Blue%20Lake%20Eatery%20%26%20Bar%20Lake%20Tekapo" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Blue Lake Eatery & Bar</span><span class="eng">紐西蘭時令料理・鹿肉羊肉推薦</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Mackenzies%20Restaurant%20Lake%20Tekapo" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Mackenzies Restaurant</span><span class="eng">石板燒牛排・份量豐盛</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D04 · 庫克山 Aoraki/Mount Cook <span class="rday">9/15</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Panorama%20Room%20Hermitage%20Hotel%20Mount%20Cook" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Panorama Room</span><span class="eng">The Hermitage Hotel・獲獎景觀餐廳</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=The%20Old%20Mountaineers%20Cafe%20Mount%20Cook%20Village" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">The Old Mountaineers Café</span><span class="eng">在地有機料理・登山主題小屋</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D05–D06 · 瓦納卡 Wanaka <span class="rday">9/16-17</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Kika%20Restaurant%20Wanaka" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Kika</span><span class="eng">現代 Tapas・名廚坐鎮高評價</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Big%20Fig%20Wanaka" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Big Fig</span><span class="eng">健行後補給首選・份量實在</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Bistro%20Gentil%20Wanaka" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Bistro Gentil</span><span class="eng">法式小酒館・在地評價最高之一</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D07–D08 · 皇后鎮 Queenstown <span class="rday">9/18-19</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Fergburger%20Queenstown" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Fergburger</span><span class="eng">紐西蘭國民漢堡・排隊名店</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Rata%20Restaurant%20Queenstown" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Rata</span><span class="eng">名廚 Josh Emett・紐西蘭頂級餐廳之一</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Botswana%20Butchery%20Queenstown" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Botswana Butchery</span><span class="eng">河畔景觀牛排館・羊排推薦</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Jervois%20Steak%20House%20Queenstown" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Jervois Steak House</span><span class="eng">在地公認牛排第一名</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D09–D10 · 蒂阿瑙與米佛峽灣 <span class="rday">9/20-21</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Redcliff%20Restaurant%20%26%20Bar%20Te%20Anau" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Redcliff Restaurant & Bar</span><span class="eng">古厝風情・費奧德蘭野味鹿肉</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=The%20Fat%20Duck%20Te%20Anau" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">The Fat Duck</span><span class="eng">現代紐西蘭料理・氣氛熱鬧</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Kepler%20Restaurant%20Te%20Anau" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Kepler Restaurant</span><span class="eng">湖景餐廳・精緻套餐</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D11 · 但尼丁 Dunedin <span class="rday">9/22-23</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Bacchus%20Wine%20Bar%20Dunedin" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Bacchus Wine Bar & Restaurant</span><span class="eng">1880 年代古建築・連續獲獎</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Vault%2021%20Dunedin" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Vault 21</span><span class="eng">The Octagon・亞洲風味小食共享</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Best%20Cafe%20Dunedin" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Best Café</span><span class="eng">1932 年老字號・炸魚薯條經典</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D12 · 奧瑪魯 Oamaru <span class="rday">9/24</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Star%20and%20Garter%20Restaurant%20Oamaru" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Star & Garter Restaurant</span><span class="eng">海鮮巧達湯與藍鱈魚人氣款</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Portside%20Restaurant%20Oamaru" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Portside Restaurant</span><span class="eng">港邊景觀・鮭魚料理推薦</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Riverstone%20Kitchen%20Oamaru" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Riverstone Kitchen</span><span class="eng">自家有機農場直送・區域名店</span></span></a>
+      </div>
+    </div>
+    <div class="spot-region">
+      <h4>D13–D15 · 基督城 Christchurch（回程） <span class="rday">9/25-27</span></h4>
+      <div class="spot-grid">
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Inati%20Restaurant%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Inati</span><span class="eng">紐西蘭當代料理・Google 高分餐廳</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=C1%20Espresso%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">C1 Espresso</span><span class="eng">創意漢堡與咖啡・氣送薯條聞名</span></span></a>
+      <a class="spot-card food-card" href="https://www.google.com/maps/search/?api=1&query=Little%20High%20Eatery%20Christchurch" target="_blank" rel="noopener"><span class="pin">🍽️</span><span class="names"><span class="name">Little High Eatery</span><span class="eng">美食廣場・回程前最後採買嚐鮮</span></span></a>
+      </div>
+    </div>
+</section>
+
+<section id="shopping" class="view">
+  <div class="section-head">
+    <span class="eyebrow">Shopping List</span>
+    <h2>紐西蘭必買好物</h2>
+    <p style="color:var(--text-soft); font-size:.88rem; max-width:520px; margin:.6rem auto 0;">CP 值超高、比台灣代購／專櫃划算的商品，依類別整理，出發前先看，購買後可打勾確認。</p>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">💊</span> 保健食品／保養品（藥妝店最划算）</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">Go Healthy 高濃度魚油（2000mg/顆，濃度約台灣常見魚油兩倍，藥妝店價格常是台灣代購價一半）</li>
+      <li><input type="checkbox" class="box">Manuka Health 麥蘆卡蜂蜜錠／MGO 蜂蜜（認明 UMF/MGO 標示，當地價常是台灣專櫃 1/2～1/3）</li>
+      <li><input type="checkbox" class="box">Red Seal 蜂膠牙膏（天然無防腐劑配方，台灣少見，送禮首選）</li>
+      <li><input type="checkbox" class="box">Red Seal 維他命 C 發泡錠（多種水果口味、濃度高，價格親民）</li>
+      <li><input type="checkbox" class="box">Wild Ferns／Antipodes 綿羊油護手霜、面霜（紐西蘭在地品牌，比台灣代購便宜不少）</li>
+      <li><input type="checkbox" class="box">Blackmores／GO Healthy 深海魚油、葉黃素（原產地直購比台灣專櫃划算）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🍯</span> 蜂蜜與茶包</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">麥蘆卡蜂蜜 Manuka Honey（超市選購最划算，UMF10+／MGO263+ 以上才有療效等級）</li>
+      <li><input type="checkbox" class="box">Red Seal 水果花茶包（多種口味、小巧輕便，送禮方便）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🍫</span> 零食巧克力</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">Whittaker's 巧克力（紐西蘭國民巧克力，超市價格約台灣代購一半甚至更低）</li>
+      <li><input type="checkbox" class="box">CookieTime 巧克力餅乾（超市／賣場購買比機場便宜非常多）</li>
+      <li><input type="checkbox" class="box">L&P 檸檬汽水（紐西蘭限定飲料，台灣買不到）</li>
+      <li><input type="checkbox" class="box">鹽味奶油泡芙、Manuka 蜂蜜糖等紐西蘭限定零食</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🧣</span> 羊毛與織品</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">Merino 美麗諾羊毛製品（圍巾、襪子、毛衣，認明「Made in NZ」，Outlet 暢貨中心最划算）</li>
+      <li><input type="checkbox" class="box">羊駝毛製品 Alpaca（圍巾、毛毯，保暖透氣，紐西蘭在地特色，台灣罕見）</li>
+      <li><input type="checkbox" class="box">羊毛拖鞋／雪靴（比台灣代購價便宜不少）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">💎</span> 紀念品與工藝品</h4>
+    <ul class="pack-list">
+      <li><input type="checkbox" class="box">綠玉 Pounamu 毛利玉飾（建議信譽良好的專賣店購買，避免機場紀念品店）</li>
+      <li><input type="checkbox" class="box">鮑魚殼 Paua 貝殼飾品（色彩獨特、輕巧好帶）</li>
+      <li><input type="checkbox" class="box">紐西蘭葡萄酒（Marlborough 白蘇維濃、中奧塔哥黑皮諾，酒莊直購或機場免稅店）</li>
+    </ul>
+  </div>
+
+  <p class="pack-note">💡 購物提醒：① 紐西蘭沒有旅客現金退稅（TRS）制度，商品價格已含 GST，機場無法退稅。② 超市 Pak'nSave 通常最便宜，Countdown／New World 次之；藥妝店 Chemist Warehouse、Unichem 的保健品價格常比機場、景點紀念品店便宜許多。③ 蜂蜜、魚油等液態／膏狀商品建議放託運行李，避免隨身超過 100ml 限制被沒收。④ 這類商品偏重，記得預留行李空間與秤重。</p>
+</section>
+
+<section id="notes" class="view">
+  <div class="section-head">
+    <span class="eyebrow">Good to Know</span>
+    <h2>注意事項</h2>
+    <p style="color:var(--text-soft); font-size:.88rem; max-width:520px; margin:.6rem auto 0;">南島自駕行程的關鍵安全與生活資訊，出發前快速掃過一遍即可。</p>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🚨</span> 緊急聯絡</h4>
+    <ul class="pack-list wide">
+      <li><input type="checkbox" class="box">警消／救護：<b>111</b>（全紐西蘭通用緊急電話）</li>
+      <li><input type="checkbox" class="box">租車道路救援電話（訂車確認信上會附，出發前先存進手機）</li>
+      <li><input type="checkbox" class="box">旅遊平安險 24 小時海外協助專線（保單上找，先截圖存起來）</li>
+      <li><input type="checkbox" class="box">駐奧克蘭台北經濟文化辦事處緊急聯絡電話（急難救助用，出發前上外交部網站查詢最新號碼）</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🛂</span> 入境與海關注意事項</h4>
+    <ul class="pack-list wide">
+      <li><input type="checkbox" class="box">出發前先辦好 <b>NZeTA 電子旅行許可</b>（App 約 NZD17／網頁 NZD23）＋ <b>IVL 國際旅客保育旅遊稅</b>（NZD100），登機前須完成，建議提早申請</li>
+      <li><input type="checkbox" class="box">登機前 24 小時內線上完成 <b>New Zealand Traveller Declaration</b>（紐西蘭旅客申報，App 或網站皆可，取代舊版紙本入境卡）</li>
+      <li><input type="checkbox" class="box">生物安全審查嚴格：食品、水果、植物種子、蜂蜜、木製品、泥土、髒的健行鞋／戶外裝備、動物製品都要誠實申報，未申報當場開罰</li>
+      <li><input type="checkbox" class="box">不確定的物品「寧可申報」，也可在入境時投入海關「特赦回收桶」（amnesty bin）不會被罰</li>
+      <li><input type="checkbox" class="box">酒類超過 3 瓶烈酒（每瓶 ≤1.125L）＋ 4.5L 葡萄酒／啤酒，或菸草超過 50 支香菸／50g，需申報並可能課稅</li>
+      <li><input type="checkbox" class="box">攜帶物品（含伴手禮）總值超過 NZD700，或現金等值 NZD10,000 以上，都需要申報</li>
+      <li><input type="checkbox" class="box">隨身藥物建議攜帶英文處方箋／醫師證明，超過三個月用量需申報</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🚗</span> 自駕注意事項</h4>
+    <ul class="pack-list wide">
+      <li><input type="checkbox" class="box">紐西蘭<b>靠左行駛</b>，圓環一律讓右方來車先行</li>
+      <li><input type="checkbox" class="box">單線橋（One Lane Bridge）看指示牌箭頭誰有優先權，沒有牌子則靠近端先讓</li>
+      <li><input type="checkbox" class="box">郊區加油站入夜前常打烊，油量剩一半就建議加油</li>
+      <li><input type="checkbox" class="box">米佛公路（Milford Road）春季偶有雪崩封路或需雪鏈，出發前查 NZTA Journeys 即時路況</li>
+      <li><input type="checkbox" class="box">山區彎道多，注意野生動物（兔子、鹿）夜間穿越</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">🌤️</span> 氣候與實用 App</h4>
+    <ul class="pack-list wide">
+      <li><input type="checkbox" class="box">九月南島仍是初春，日夜溫差大，山區可能飄雪，洋蔥式穿搭最保險</li>
+      <li><input type="checkbox" class="box">MetService（天氣預報）、NZTA Journeys（封路路況）、CamperMate（加油站／廁所地圖）出發前先下載</li>
+    </ul>
+  </div>
+
+  <div class="pack-region">
+    <h4><span class="icon">💡</span> 生活小知識</h4>
+    <ul class="pack-list wide">
+      <li><input type="checkbox" class="box">紐西蘭沒有給小費的習慣，餐廳標價已含服務費</li>
+      <li><input type="checkbox" class="box">水龍頭的水可直接生飲</li>
+      <li><input type="checkbox" class="box">電壓 230V，插座為紐澳規格 Type I（記得帶轉接頭）</li>
+      <li><input type="checkbox" class="box">小鎮商店普遍晚上 5-6 點就打烊，晚餐食材建議白天先採買</li>
+    </ul>
+  </div>
+</section>
+
+<!-- D01 -->
+<div class="day view" id="d01">
+  <div class="day-progress">DAY 01 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">01</span>
+    <span class="day-date">9/12（六）</span>
+    <span class="day-base">出發</span>
+  </div>  <div class="meta-row"><span>🌅 <b>日出：</b>06:08　🌇 <b>日落：</b>17:45</span></div>
+  <h3>啟程：高雄、台北出發</h3>
+  <div class="desc">帶著興奮的心情前往機場，準備迎接南半球的春天。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>護照與電子機票、暖色系長途飛行外套與頸枕、常備藥品、手機海外上網 SIM／eSIM、轉接頭與行動電源</div>
+
+  <div class="day-flight"><b>今日航班：</b>11:10 KHH → HKG（CX431）／21:10 HKG → AKL（CX113，隔日 11:50 抵達）</div>
+  <div class="day-nav">
+    <button class="nav-btn" disabled>← 前一天</button>
+    <button class="nav-btn" data-view="d02">9/13（日） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D02 -->
+<div class="day view" id="d02">
+  <div class="day-progress">DAY 02 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">02</span>
+    <span class="day-date">9/13（日）</span>
+    <span class="day-base">基督城 → Ashburton</span>
+  </div>  <h3>抵達基督城：南島門戶</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>基督城機場 → 租車公司 → 超市採買 → Ashburton</span><span>🚗 <b>距離／時間：</b>約 90 km／1.1 小時</span><span>🌅 <b>日出：</b>06:15　🌇 <b>日落：</b>18:38</span></div>
+  <ul class="itinerary">
+    <li>降落基督城機場，辦理租車手續</li>
+    <li>前往大型超市（Countdown 或 New World）物資大採買</li>
+    <li>驅車前往 Ashburton 入住，調整時差</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>抵達基督城後，首要任務是辦理租車並前往大型超市進行物資大採買。Ashburton 是位於坎特伯雷平原中心的小鎮，做為進入內陸前的中繼站，這裡氣氛寧靜，非常適合調整時差。</div>
+  <div class="chips"><span class="chip">採買水、簡單備品</span><span class="chip">長途開車零食</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>初抵紐西蘭請注意右駕習慣，Ashburton 路段平直，但要注意車速與圓環禮讓規則。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>國際駕照＋台灣駕照正本、租車信用卡（預刷額度）、購物袋、保暖外套（初抵溫差）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>克羅納特恩公園假日酒店<span class="addr">780 East Street, Netherby, Ashburton 7700</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/G5TSc2ZmitffNmNa8?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d01">← 9/12（六）</button>
+    <button class="nav-btn" data-view="d03">9/14（一） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D03 -->
+<div class="day view" id="d03">
+  <div class="day-progress">DAY 03 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">03</span>
+    <span class="day-date">9/14（一）</span>
+    <span class="day-base">蒂卡波</span>
+  </div>  <h3>蒂卡波：璀璨星空序幕</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>Ashburton → Lake Tekapo → Mt. John 步道 → 溫泉</span><span>🚗 <b>距離／時間：</b>約 130 km／1.5–2 小時</span><span>🌅 <b>日出：</b>06:25　🌇 <b>日落：</b>18:45</span></div>
+  <ul class="itinerary">
+    <li>驅車前往蒂卡波湖（Lake Tekapo）</li>
+    <li>健行 Mt. John Summit Circuit Track，360° 俯瞰湖水與平原，山頂 Astro Café 休息</li>
+    <li>參觀牧羊人教堂（Church of the Good Shepherd）</li>
+    <li>傍晚前往 Tekapo Springs 溫泉，仰望星空</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>蒂卡波湖以其土耳其藍的湖水聞名，這是由冰川沖刷下的岩石粉末懸浮於水中所形成的。Mt John Summit Circuit Track 是此地必走的健行路線，登上山頂可 360° 俯瞰湛藍的湖水與廣闊的平原。傍晚前往 Tekapo Springs，在暖和的泉水中放鬆身心，仰望全世界最清澈的星空之一。</div>
+  <div class="chips"><span class="chip">牧羊人教堂</span><span class="chip">Mt. John 天文台</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>Mt John 步道風大，即使春天也要準備防風外套；教堂區禁止無人機。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>防風外套、健行鞋、泳衣與大毛巾（Tekapo Springs 溫泉用）、防曬乳、太陽眼鏡</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Tekapo Luxury Apartments<span class="addr">12 Erebus Place, Lake Tekapo 7999</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/Gm8L2M3yo82Q8noGA?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d02">← 9/13（日）</button>
+    <button class="nav-btn" data-view="d04">9/15（二） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D04 -->
+<div class="day view" id="d04">
+  <div class="day-progress">DAY 04 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">04</span>
+    <span class="day-date">9/15（二）</span>
+    <span class="day-base">庫克山</span>
+  </div>  <h3>庫克山：冰川奇緣</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>Tekapo → Mt. Cook 直昇機健行 → Lake Pukaki 鮭魚</span><span>🚗 <b>距離／時間：</b>單程約 105 km／1.2 小時</span><span>🌅 <b>日出：</b>06:27　🌇 <b>日落：</b>18:45</span></div>
+  <ul class="itinerary">
+    <li>驅車前往庫克山（紐西蘭最高峰）</li>
+    <li>塔斯曼直昇機冰川健行（Heli Hike）：飛越冰川並降落冰上，探索冰洞與藍冰裂隙</li>
+    <li>回程停留 Lake Pukaki「藍色牛奶湖」，Alpine Salmon 品嚐生魚片與鮭魚派，遠眺雪山日落</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>庫克山是紐西蘭最高峰，今日重頭戲是塔斯曼直昇機冰川健行，由專業嚮導帶領探索冰洞與藍冰裂隙，是視覺與感官的極致饗宴。回程經過的 Lake Pukaki 被譽為「藍色牛奶湖」。</div>
+  <div class="chips"><span class="chip">塔斯曼冰川直昇機</span><span class="chip">Lake Pukaki 拍照</span><span class="chip">鮭魚生魚片</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>直昇機受天氣影響極大，冰上健行需穿著保暖防風衣物。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>極保暖防風衣物（雪地直升機健行專用）、手套與毛帽、防滑登山鞋、太陽眼鏡（雪地反光強烈）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Tekapo Luxury Apartments<span class="addr">12 Erebus Place, Lake Tekapo 7999</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/Gm8L2M3yo82Q8noGA?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d03">← 9/14（一）</button>
+    <button class="nav-btn" data-view="d05">9/16（三） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D05 -->
+<div class="day view" id="d05">
+  <div class="day-progress">DAY 05 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">05</span>
+    <span class="day-date">9/16（三）</span>
+    <span class="day-base">瓦納卡</span>
+  </div>  <h3>瓦納卡：湖畔慢活</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>Lake Pukaki → 瓦納卡划槳 → 孤獨樹</span><span>🚗 <b>距離／時間：</b>約 150 km／2 小時</span><span>🌅 <b>日出：</b>06:32　🌇 <b>日落：</b>18:47</span></div>
+  <ul class="itinerary">
+    <li>驅車穿過 Lindis Pass 前往瓦納卡</li>
+    <li>下午 Paddle Wanaka 獨木舟體驗</li>
+    <li>漫步至 That Wanaka Tree（孤獨樹），湖畔咖啡館享受午陽</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>驅車穿過 Lindis Pass 前往瓦納卡。下午參加 Paddle Wanaka 獨木舟體驗，從水面上近距離感受湖水的清澈與山脈的倒影。That Wanaka Tree 是紐西蘭最上鏡的樹木，瓦納卡比皇后鎮更顯安靜。</div>
+  <div class="chips"><span class="chip">瓦納卡孤獨樹</span><span class="chip">Lindis Pass 絕景</span><span class="chip">水上運動</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>九月湖水仍寒冷，划槳時請務必著租借點提供的保暖裝備。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>快乾／防水衣物、保暖層（划獨木舟湖水冰冷）、拖鞋或涼鞋替換、防水袋（手機相機防濺濕）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>高爾夫球場路度假屋旅館<span class="addr">44 Golf Course Road, Wānaka 9305</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/vQqAwHzi2bTa327T9" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d04">← 9/15（二）</button>
+    <button class="nav-btn" data-view="d06">9/17（四） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D06 -->
+<div class="day view" id="d06">
+  <div class="day-progress">DAY 06 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">06</span>
+    <span class="day-date">9/17（四）</span>
+    <span class="day-base">瓦納卡</span>
+  </div>  <h3>瓦納卡巔峰挑戰：Roys Peak</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>挑戰 Roys Peak Lookout 登頂</span><span>🥾 <b>距離／時間：</b>步道全長約 16 km（往返約 5–6 小時）</span><span>🌅 <b>日出：</b>06:33　🌇 <b>日落：</b>18:45</span></div>
+  <div class="desc"><span class="lbl">景點說明：</span>Roys Peak 是南島最經典的攝影點，一段持續上坡的挑戰。抵達著名展望點時，瓦納卡湖的全景、湖中小島以及背後的南阿爾卑斯山脈會在眼前鋪展。春天山上可能仍有積雪，為景觀增添了層次感。</div>
+  <div class="chips"><span class="chip">Roys Peak 網美打卡點</span><span class="chip">壯麗湖光山色</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>坡度陡且無遮蔽，請備足飲水、防曬及防滑登山鞋。若體力不支，走到 Lookout 處即可折返，不一定要登頂。該步道每年 10/1–11/10 因產羔期（Lambing season）封閉，此行程在九月，正好趕在關閉前造訪！</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>登山鞋、登山杖、足量飲水與行動糧、防曬乳與帽子、洋蔥式多層次穿搭（山頂風大溫差大）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>高爾夫球場路度假屋旅館<span class="addr">44 Golf Course Road, Wānaka 9305</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/vQqAwHzi2bTa327T9" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d05">← 9/16（三）</button>
+    <button class="nav-btn" data-view="d07">9/18（五） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D07 -->
+<div class="day view" id="d07">
+  <div class="day-progress">DAY 07 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">07</span>
+    <span class="day-date">9/18（五）</span>
+    <span class="day-base">瓦納卡 → 皇后鎮</span>
+  </div>  <h3>皇后鎮：經典蒸汽船</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>瓦納卡 → 箭鎮（超市）→ 恩斯羅號蒸汽船 → 植物園賞櫻</span><span>🚗 <b>距離／時間：</b>約 70 km／1.2 小時</span><span>🌅 <b>日出：</b>06:36　🌇 <b>日落：</b>18:45</span></div>
+  <ul class="itinerary">
+    <li>途經箭鎮補給</li>
+    <li>搭乘百年 TSS Earnslaw 蒸汽船航行瓦卡蒂普高原牧場，享用燒烤午餐與剪羊毛秀</li>
+    <li>下午皇后鎮植物園賞櫻，漫步粉紅花海與碧綠湖水間</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>搭乘高齡百歲的 TSS Earnslaw 恩斯羅號蒸汽船，這艘燃煤蒸汽船航行於瓦卡蒂普高原牧場。下午回到市區，此時正是皇后鎮植物園櫻花盛開的季節。</div>
+  <div class="chips"><span class="chip">TSS 蒸汽船航行</span><span class="chip">瓦爾特峰牧場</span><span class="chip">植物園賞櫻</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>蒸汽船建議提早預訂。九月的皇后鎮日夜溫差大，戶外活動建議穿著洋蔥式穿法。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>保暖外套（日夜溫差大）、相機（蒸汽船與植物園賞櫻）、輕便背包</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Mantra The Point - Queenstown<span class="addr">239 Frankton Road, Queenstown 9300</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/9ZsthERmZo2FyNhn6?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d06">← 9/17（四）</button>
+    <button class="nav-btn" data-view="d08">9/19（六） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D08 -->
+<div class="day view" id="d08">
+  <div class="day-progress">DAY 08 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">08</span>
+    <span class="day-date">9/19（六）</span>
+    <span class="day-base">皇后鎮</span>
+  </div>  <h3>皇后鎮：極限冒險與美食</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>Fergburger → 纜車與斜坡滑車 → 高空滑索</span><span>🚡 <b>距離／時間：</b>市區步行與纜車</span><span>🌅 <b>日出：</b>06:37　🌇 <b>日落：</b>18:43</span></div>
+  <ul class="itinerary">
+    <li>一早排隊品嚐世界聞名的 Fergburger</li>
+    <li>搭乘 Skyline Gondola 登上鮑勃峰，體驗 Luge 斜坡滑車 5 次</li>
+    <li>下午參加 Kea 6 綠滑索（Ziptrek），樹林間時速 70 公里飛翔</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>Luge（斜坡滑車）是大人小孩都瘋狂的活動，五次體驗讓您充分掌握扭尾快感。Ziptrek 滑索在樹林間飛翔，同時飽覽皇后鎮全景，刺激又環保。</div>
+  <div class="chips"><span class="chip">Fergburger</span><span class="chip">Skyline Luge ×5</span><span class="chip">Ziptrek 滑索</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>Luge 第一次會是訓練道，後續可挑戰進階道。九月午後山上體感較冷，滑索時手部保暖很重要。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>運動鞋（Luge 滑車）、手套（Ziptrek 滑索保暖防磨）、防風外套、綁繩眼鏡或太陽眼鏡</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Mantra The Point - Queenstown<span class="addr">239 Frankton Road, Queenstown 9300</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/9ZsthERmZo2FyNhn6?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d07">← 9/18（五）</button>
+    <button class="nav-btn" data-view="d09">9/20（日） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D09 -->
+<div class="day view" id="d09">
+  <div class="day-progress">DAY 09 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">09</span>
+    <span class="day-date">9/20（日）</span>
+    <span class="day-base">皇后鎮 → 蒂阿瑙</span>
+  </div>  <h3>蒂阿瑙：藍光螢火蟲</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>皇后鎮 → 蒂阿瑙 → 螢火蟲洞</span><span>🚗 <b>距離／時間：</b>約 170 km／2 小時</span><span>🌅 <b>日出：</b>06:42　🌇 <b>日落：</b>18:45</span></div>
+  <ul class="itinerary">
+    <li>沿瓦卡蒂普湖岸公路前進，抵達蒂阿瑙（米佛峽灣門戶）</li>
+    <li>傍晚參加 Te Anau Glowworm Caves，搭小船進入地底石灰岩洞</li>
+    <li>欣賞成千上萬藍色螢火蟲，感受地底銀河</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>沿瓦卡蒂普湖岸公路前進，這段風景極美。蒂阿瑙是進入米佛峽灣的門戶，傍晚搭小船進入漆黑的地底石灰岩洞，欣賞如繁星般的藍色螢火蟲。</div>
+  <div class="chips"><span class="chip">蒂阿瑙湖景</span><span class="chip">地底螢火蟲奇觀</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>洞穴內禁止攝影及大聲喧嘩，需保持安靜以防驚擾生態。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>保暖外套（洞穴內陰冷潮濕）、不需相機（螢火蟲洞禁止攝影）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Tasman Holiday Parks - Te Anau<span class="addr">128 Te Anau Terrace, Te Anau 9600</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/pLRBjV3vc962bzcS9?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d08">← 9/19（六）</button>
+    <button class="nav-btn" data-view="d10">9/21（一） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D10 -->
+<div class="day view" id="d10">
+  <div class="day-progress">DAY 10 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">10</span>
+    <span class="day-date">9/21（一）</span>
+    <span class="day-base">米佛峽灣</span>
+  </div>  <h3>米佛峽灣：世界第八大奇景</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>蒂阿瑙 → 米佛峽灣遊船 → 返回蒂阿瑙泡湯</span><span>🚗 <b>距離／時間：</b>來回約 240 km／4 小時車程</span><span>🌅 <b>日出：</b>06:43　🌇 <b>日落：</b>18:42</span></div>
+  <ul class="itinerary">
+    <li>驅車前往米佛峽灣，沿途鏡湖、猴子山</li>
+    <li>搭乘遊船欣賞高處墜下的瀑布，可能出現海豚與海豹</li>
+    <li>回程於蒂阿瑙享受戶外 Hot Tub</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>米佛峽灣是冰川切割而成的壯麗峽谷，遊船沿途會看到從數百公尺高處墜下的瀑布，以及可能出現的野生動物。回程在蒂阿瑙享受 Hot Tub，在熱氣騰騰的浴池中洗去一身疲憊。</div>
+  <div class="chips"><span class="chip">鏡湖・猴子山</span><span class="chip">峽灣瀑布</span><span class="chip">野生動物</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>米佛公路多彎道且可能有積雪／落石，請預留充足開車時間。建議帶防水外套，遊船靠近瀑布時會淋濕。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>防水外套（遊船近瀑布會淋濕）、暈船藥、保暖衣物（峽灣風大濕冷）、望遠鏡</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Tasman Holiday Parks - Te Anau<span class="addr">128 Te Anau Terrace, Te Anau 9600</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/pLRBjV3vc962bzcS9?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d09">← 9/20（日）</button>
+    <button class="nav-btn" data-view="d11">9/22–23（二、三） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D11 -->
+<div class="day view" id="d11">
+  <div class="day-progress">DAY 11 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">11–12</span>
+    <span class="day-date">9/22–9/23（二、三）</span>
+    <span class="day-base">但尼丁</span>
+  </div>  <h3>但尼丁：蘇格蘭風情</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>蒂阿瑙 → 但尼丁市區觀光</span><span>🚗 <b>距離／時間：</b>約 290 km／3.3 小時</span><span>🌅🌇 <b>日出日落：</b>9/22 🌅06:34／🌇18:30　9/23 🌅06:35／🌇18:28</span></div>
+  <ul class="itinerary">
+    <li>驅車前往但尼丁，紐西蘭最有蘇格蘭氣息的城市</li>
+    <li>造訪世界最陡的街 Baldwin Street、但尼丁火車站</li>
+    <li>奧塔哥大學校園建築、聖保羅大教堂</li>
+    <li>用兩天時間慢遊咖啡館與藝術氣息濃厚的歷史小城</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>但尼丁是紐西蘭最有蘇格蘭氣息的城市，可造訪 Baldwin Street 或宏偉的火車站，奧塔哥大學校園與聖保羅大教堂也值得駐足，這裡的咖啡館與藝術氣息濃厚。</div>
+  <div class="chips"><span class="chip">但尼丁火車站</span><span class="chip">鮑德溫街</span><span class="chip">奧塔哥半島生態</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>市區有些街道坡度極陡，開車與停車需格外小心手煞車。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>舒適好走的鞋（坡道多）、輕便雨具（天氣多變）、保暖外套</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>赫瑞巷城公寓酒店<span class="addr">30 Heriot Row, Central Dunedin, Dunedin 9016</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/9CNEzs8hSJyBdbEcA?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d10">← 9/21（一）</button>
+    <button class="nav-btn" data-view="d12">9/24（四） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D12 -->
+<div class="day view" id="d12">
+  <div class="day-progress">DAY 12 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">13</span>
+    <span class="day-date">9/24（四）</span>
+    <span class="day-base">奧瑪魯</span>
+  </div>  <h3>奧瑪魯：企鵝歸巢</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>但尼丁 → 摩拉基大圓石 → 奧瑪魯藍企鵝</span><span>🚗 <b>距離／時間：</b>約 115 km／1.5 小時</span><span>🌅 <b>日出：</b>06:34　🌇 <b>日落：</b>18:24</span></div>
+  <ul class="itinerary">
+    <li>途中停靠 Moeraki Boulders（摩拉基大圓石）</li>
+    <li>抵達奧瑪魯，維多利亞時代石灰岩建築街區</li>
+    <li>傍晚 The Blue Penguin Colony 觀賞藍企鵝歸巢</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>Moeraki Boulders 是重達數噸的圓形巨石，散落沙灘上像是巨人的大理石。奧瑪魯以維多利亞時代的石灰岩建築著稱，傍晚可坐在看台上觀賞世界最小的藍企鵝從海上歸巢，搖搖晃晃走回巢穴。</div>
+  <div class="chips"><span class="chip">摩拉基大圓石</span><span class="chip">維多利亞街區</span><span class="chip">藍企鵝歸巢</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>觀賞企鵝歸巢禁止拍照（包括閃光燈），晚間海邊氣溫極低，通常需靜候一段時間，請務必著最保暖的防風外套與毛帽。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>最保暖防風外套與毛帽、手套（傍晚海邊觀企鵝氣溫極低）、不需相機閃光燈（禁止拍照）、保溫水壺</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>289米德維旅店<span class="addr">289 Thames Street, Oamaru 9400</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/NyCJkLApzbA4rJuE8?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d11">← 9/22–23（二、三）</button>
+    <button class="nav-btn" data-view="d13">9/25（五） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D13 -->
+<div class="day view" id="d13">
+  <div class="day-progress">DAY 13 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">14</span>
+    <span class="day-date">9/25（五）</span>
+    <span class="day-base">奧瑪魯 → 基督城</span>
+  </div>  <h3>城堡山：納尼亞傳奇</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>奧瑪魯 → Castle Hill → 基督城還車</span><span>🚗 <b>距離／時間：</b>約 350 km／4.5 小時（分段行駛）</span><span>🌅 <b>日出：</b>06:28　🌇 <b>日落：</b>18:16</span></div>
+  <ul class="itinerary">
+    <li>驅車前往 Castle Hill（Kura Tawhiti），《納尼亞傳奇》取景地</li>
+    <li>自由穿梭巨大石灰岩石群間，感受大自然的鬼斧神工</li>
+    <li>返回基督城，完成加油與還車手續，入住市中心</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>Castle Hill 巨大的石灰岩石群林立在草地上，壯觀又神祕，可自由在岩石間穿梭探險。之後返回基督城，完成最後的加油與還車手續。</div>
+  <div class="chips"><span class="chip">城堡山巨石陣</span><span class="chip">73 號景觀公路</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>今日車程較長，建議早上提早出發，以免影響下午還車時間。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>手套（城堡山攀爬石灰岩用）、防滑好走的鞋、駕照與租車文件（還車用）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Hotel Give<span class="addr">12 Hereford Street, Christchurch Central City, Christchurch 8013</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/o5AfiJvMxdU7XCKn8?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d12">← 9/24（四）</button>
+    <button class="nav-btn" data-view="d14">9/26（六） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D14 -->
+<div class="day view" id="d14">
+  <div class="day-progress">DAY 14 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">15</span>
+    <span class="day-date">9/26（六）</span>
+    <span class="day-base">基督城</span>
+  </div>  <h3>基督城：花園城市收尾</h3>
+  <div class="meta-row"><span>📍 <b>行程：</b>雅芳河遊船 → 植物園賞櫻 → 市區電車 → 河邊市集</span><span>🚶 <b>距離／時間：</b>市區步行／路面電車</span><span>🌅 <b>日出：</b>06:30　🌇 <b>日落：</b>18:14</span></div>
+  <ul class="itinerary">
+    <li>搭乘英式雅芳河（Avon River）撐篙船，看岸邊櫻花飄落</li>
+    <li>搭乘復古路面電車繞行市區，參觀紙教堂與地震紀念碑</li>
+    <li>Riverside Market 享受美食，挑選伴手禮</li>
+  </ul>
+  <div class="desc"><span class="lbl">景點說明：</span>最後一天在「花園城市」放鬆。搭乘雅芳河撐篙船，看著岸邊櫻花飄落。隨後搭乘復古路面電車繞行市區，最後在 Riverside Market 享受美食，為旅程畫下完美句點。</div>
+  <div class="chips"><span class="chip">雅芳河撐篙</span><span class="chip">路面電車</span><span class="chip">Riverside Market</span></div>
+  <div class="note"><span class="lbl">注意事項：</span>市區電車票可當日無限次搭乘，是逛市區最方便的選擇。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>輕便舒適衣著、相機（雅芳河與植物園賞櫻）、購物袋（Riverside Market 採買伴手禮）</div>
+
+  <div class="day-stay">
+    <span class="info"><b>🏨 住宿：</b>Hotel Give<span class="addr">12 Hereford Street, Christchurch Central City, Christchurch 8013</span></span>
+    <a class="maplink" href="https://maps.app.goo.gl/o5AfiJvMxdU7XCKn8?g_st=il" target="_blank" rel="noopener">📍 開啟地圖</a>
+  </div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d13">← 9/25（五）</button>
+    <button class="nav-btn" data-view="d15">9/27（日） →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+<!-- D15 -->
+<div class="day view" id="d15">
+  <div class="day-progress">DAY 15 / 15</div>
+
+  <div class="day-head">
+    <span class="day-num">16</span>
+    <span class="day-date">9/27（日）</span>
+    <span class="day-base">賦歸</span>
+  </div>  <div class="meta-row"><span>🌅 <b>日出：</b>07:31　🌇 <b>日落：</b>19:12</span></div>
+  <h3>賦歸</h3>
+  <div class="desc">帶著滿滿的回憶前往機場，搭機回程。</div>
+  <div class="packing"><span class="lbl">🎒 隨身物品：</span>護照與登機證、退稅單據與收據（機場退稅）、伴手禮打包空間預留、常備藥品</div>
+
+  <div class="day-flight"><b>今日航班：</b>09:40 CHC → AKL（JQ232）／14:25 AKL → HKG（CX198）／隔日 08:35 HKG → KHH（CX432，10:10 抵達）</div>
+  <div class="day-nav">
+    <button class="nav-btn" data-view="d14">← 9/26（六）</button>
+    <button class="nav-btn" disabled>後一天 →</button>
+    <span class="hint">左右滑動也可切換天數</span>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <span class="serif">Kia ora, 南島！</span>
+  帶著櫻花與星空的記憶，滿載而歸。
+</footer>
+
+<script>
+// falling petals
+(function(){
+  const wrap = document.getElementById('petals');
+  if(!wrap) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  const n = 26;
+  for(let i=0;i<n;i++){
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const left = Math.random()*100;
+    const size = 6 + Math.random()*8;
+    const dur = 9 + Math.random()*10;
+    const delay = Math.random()*14;
+    const drift = (Math.random()*80-40)+'px';
+    p.style.left = left+'vw';
+    p.style.width = size+'px';
+    p.style.height = size+'px';
+    p.style.animationDuration = dur+'s';
+    p.style.animationDelay = '-'+delay+'s';
+    p.style.setProperty('--drift', drift);
+    p.style.background = Math.random()>0.5 ? 'var(--sakura)' : '#F2C4D3';
+    wrap.appendChild(p);
+  }
+})();
+
+// view switching (each day is its own page, no scrolling)
+(function(){
+  const links = Array.from(document.querySelectorAll('#tabbar a'));
+  const dayLinks = Array.from(document.querySelectorAll('#daybar a'));
+  const views = Array.from(document.querySelectorAll('.view'));
+  const main = document.querySelector('main');
+  const daybar = document.getElementById('daybar');
+
+  function showView(id){
+    if(!id) return;
+    const target = document.getElementById(id);
+    if(!target) return;
+    const isDay = /^d\d+$/.test(id);
+    views.forEach(v => v.classList.toggle('active', v.id === id));
+    links.forEach(a => {
+      const match = isDay ? a.dataset.group === 'days' : a.dataset.view === id;
+      a.classList.toggle('active', match);
+    });
+    dayLinks.forEach(a => a.classList.toggle('active', a.dataset.view === id));
+    daybar.classList.toggle('show', isDay);
+    main.scrollIntoView({behavior:'smooth', block:'start'});
+    history.replaceState(null, '', '#'+id);
+  }
+
+  links.concat(dayLinks).forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      showView(a.dataset.view);
+    });
+  });
+
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.nav-btn');
+    if(!btn || btn.disabled) return;
+    showView(btn.dataset.view);
+  });
+
+  // swipe left/right to change day
+  let touchX = null;
+  document.addEventListener('touchstart', (e)=>{ touchX = e.changedTouches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', (e)=>{
+    if(touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if(Math.abs(dx) < 60) return;
+    const activeView = document.querySelector('.view.active');
+    if(!activeView || activeView.id === 'overview') return;
+    const nav = activeView.querySelector('.day-nav');
+    if(!nav) return;
+    const [prevBtn, nextBtn] = nav.querySelectorAll('.nav-btn');
+    if(dx > 0 && prevBtn && !prevBtn.disabled) showView(prevBtn.dataset.view);
+    if(dx < 0 && nextBtn && !nextBtn.disabled) showView(nextBtn.dataset.view);
+  }, {passive:true});
+
+  // open the view matching the URL hash on load, else overview
+  const initial = (location.hash || '#overview').slice(1);
+  showView(document.getElementById(initial) ? initial : 'overview');
+})();
+</script>
+
+</body>
+</html>
